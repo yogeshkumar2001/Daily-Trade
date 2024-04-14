@@ -1,33 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+a{
+  text-decoration: none !important;
+}
+li{
+  list-style: none;
+  color: white !important;
+}
+.btn-primary{
+  background-color:#00D094 !important;
+  border:#02a878 !important
+}
+.btn:hover{
+  background-color: #02a878 !important;
+  color: white;
+}
+.home_body_bg {
+  background-color: #081C17;
+  height: 100%;
+  width: 100%;
+  background-image: url("/image/banner_bg_dark.png");
+}
+.wrapper-glass{
+  height: 100%;
+    width: 45%;
+    position: absolute;
+    z-index: 9;
+    /* left: 0; */
+    right: -31px;
+    background: rgba(255, 255, 255, 0.05);
+    transform: rotate(80deg);
+    border-radius: 6rem;
+}
+.glass-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1B2D29;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 65px;
+  margin: 5px;
+  color:white;
+  padding:5px
+}
+.breadcrumb_bg{
+  background: url("/image/breadcrumb_bg.png")  no-repeat top;
+  height: 250px;
+  width:100%;
+}
+td,th {
+  background-color: #1B2D29 !important;
+  color: white !important;
+}
+.card_bg
+{
+  background-color: #1B2D29 !important;
 }
