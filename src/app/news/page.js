@@ -21,7 +21,7 @@ async function News() {
     "Technology": "technology"
   };
   return (
-    <div className="w-100 h-100" style={{ backgroundColor: "#051A14" }}>
+    <div className="w-100 h-100 pb-5" style={{ backgroundColor: "#051A14" }}>
       <div className="breadcrumb_bg w-100 d-flex align-items-end">
         <div className="container h-50">
           <h1 className="text-white">Today's Top News</h1>
@@ -30,12 +30,12 @@ async function News() {
       </div>
       <div className="d-flex">
 
-        <div className="container " style={{ marginLeft: "5%", width: "67%" }}>
+        <div className="container container_support">
           <div className="card mt-5 " style={{ backgroundColor: "#051A14" }}>
             <NewsCard data={newsArr}></NewsCard>
           </div>
         </div>
-        <div className="container " style={{ marginLeft: "5%", width: "30%" }}>
+        {/* <div className="container " >
           <div className="card mt-5 p-2 " style={{ backgroundColor: "#1B2D29" }}>
             <div className="d-flex flex-wrap justify-content-center">
               {Object.entries(categories).map(([v, k]) => {
@@ -43,7 +43,7 @@ async function News() {
               })}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

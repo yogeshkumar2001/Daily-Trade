@@ -1,12 +1,23 @@
+'use client'
+import { faDiagramProject } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
 function navbar() {
+    let isMobile = window.matchMedia("(max-width: 500px)").matches;
+    // let isMobile = window.matchMedia("(max-width: 500px)").matches;
+    console.log(isMobile)
     return (
-        <nav class="navbar fixed-top bg-transparent text-white position-absolute d-flex align-items-center" style={{height:"15%"}}>
+        <nav class="navbar fixed-top bg-transparent text-white position-absolute d-flex align-items-center" style={{ height: "15%" }}>
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">Offcanvas navbar</a>
+                <div className="d-flex">
+                    <span className="mt-2 me-2"><FontAwesomeIcon icon={faDiagramProject} size={"2xl"} style={{ color: "#00D094" }} /></span>
+                    <a class="navbar-brand text-white fs-3 fw-bold" href="/">Daily Trade</a>
+                </div>
 
-                <div className="w-75 d-flex flex-row d-flex flex-row justify-content-end">
+                {isMobile ? <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> : <div className=" d-flex flex-row d-flex flex-row justify-content-end" style={{ width: "80%" }}>
                     <ul className="w-50 d-flex flex-row justify-content-evenly">
                         <Link href="/">
                             <li>Home </li>
@@ -17,15 +28,16 @@ function navbar() {
                         <Link href="/news">
                             <li>Today News</li>
                         </Link>
-                        <Link href="/markets">
-                            <li>Markets</li>
+                        <Link href="/calculator">
+                            <li>SIP Calculator</li>
+                        </Link>
+                        <Link href="/contact">
+                            <li>Contact Us</li>
                         </Link>
                     </ul>
-                </div>
+                </div>}
                 {/* 
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> */}
+          */}
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>

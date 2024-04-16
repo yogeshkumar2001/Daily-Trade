@@ -1,9 +1,13 @@
-import { Inter } from "next/font/google";
+import { Anek_Telugu } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Document from "@/document";
 import Navbar from "./component/navbar";
-const inter = Inter({ subsets: ["latin"] });
+import Footer from "./component/footer"
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+const inter = Anek_Telugu({ subsets: ["latin-ext"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -16,8 +20,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className} >
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
         </body>
       <Document></Document>
+
     </html>
   );
 }

@@ -16,7 +16,7 @@ function newCard({ data }) {
     let prepareData = tempData.map((v) => {
         return <div class="card mb-3 card_bg" >
             <div class="row g-0 ">
-                <div class="col-md-4 d-flex justify-content-center align-items-center card_bg ps-3">
+                <div class="col-md-4 d-flex justify-content-center align-items-center card_bg p-2">
                     <img src={v.banner_image} class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
