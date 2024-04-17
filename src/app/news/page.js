@@ -24,7 +24,7 @@ async function News() {
     <div className="w-100 h-100 pb-5" style={{ backgroundColor: "#051A14" }}>
       <div className="breadcrumb_bg w-100 d-flex align-items-end">
         <div className="container h-50">
-          <h1 className="text-white">Today's Top News</h1>
+          <h1 className="text-white">Today &apos; s Top News</h1>
           <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis.</p>
         </div>
       </div>

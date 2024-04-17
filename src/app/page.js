@@ -13,7 +13,7 @@ export default async function Home({ Children }) {
       <div className={`container w-100  ${isMobile ? "pt-5 p-2" : "d-flex p-5 pb-0"}`}>
         <div className={`text white ${isMobile ? 'p-2 w-100' : 'p-5 w-50 '}`}>
           <h1 className='text-white fs-1 fw-bold'> Your Daily Source for Market Insights. <span className="mid-text">Stay Informed, Stay Ahead</span></h1>
-          <p className="text-secondary" >Welcome to Daily Trade, your one-stop destination for all things related to the stock market. Whether you're a seasoned investor or just starting out, we've got you covered with the latest market updates, top gainers and losers, breaking news, and powerful tools to help you make informed decisions about your investments.</p>
+          <p className="text-secondary" >Welcome to Daily Trade, your one-stop destination for all things related to the stock market. Whether you &apos;re a seasoned investor or just starting out, we&apos; ve got you covered with the latest market updates, top gainers and losers, breaking news, and powerful tools to help you make informed decisions about your investments.</p>
           <button className="btn btn-primary">Explore more</button>
         </div>
         <div className={` ${isMobile ? 'p-2 w-100' : 'p-5 w-50'}`}>
@@ -36,10 +36,10 @@ export default async function Home({ Children }) {
       </div>
       <div className={`container w-100  ${isMobile ? "p-2" : "d-flex  p-5 pt-0"}`}>
         <div className={`text white ${isMobile ? 'p-2 w-100' : 'w-50 p-5'}`}>
-          <h1 className='text-white fs-1 fw-bold'> <span className="mid-text">Today's News</span>, Tomorrow's Wins.</h1>
+          <h1 className='text-white fs-1 fw-bold'> <span className="mid-text">Today &apos;s News</span>, Tomorrow's Wins.</h1>
           <div className="d-flex flex-column align-items-between">
             <div className="glass-card text-secondary">Knowledge is power in finance.</div>
-            <div className="glass-card text-secondary">Our "Today's News" section keeps you informed.</div>
+            <div className="glass-card text-secondary">Our "Today &apos; s News" section keeps you informed.</div>
             <div className="glass-card text-secondary">We curate the most important news daily.</div>
             <div className="glass-card text-secondary">Make informed decisions with timely information.</div>
             <div className="glass-card text-secondary">Stay informed about economic indicators.</div>

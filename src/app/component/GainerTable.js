@@ -11,7 +11,7 @@ async function GainerTable(props) {
   
   let tableBody = <tbody>
     {props.data.map((v, i) => {
-      return <tr>
+      return <tr key={i}>
         <th scope="row">{i + 1}</th>
         <td>{v.ticker}</td>
         <td>{v.price}</td>

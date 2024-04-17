@@ -3,7 +3,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { useState } from "react";
-export default function contact() {
+export default function Contact() {
   const [userData,setUserData] = useState({
     name:"",
     email:"",
@@ -23,12 +23,13 @@ export default function contact() {
       method: "POST",
       headers: { "Content_Type": "application/json" },
       body: JSON.stringify({
-        "username": "admin",
-        "email": "admin@gmail.com",
-        "message": "Hello i'm message"
+        "username": userData.name,
+        "email": userData.email,
+        "message": userData.message
       })
+      
   })
-  console.log("resoibnse kjbdfwef " + res)
+  setStatus(true)
 }
 let isMobile = window.matchMedia("(max-width:500px)").matches
 return (
@@ -58,18 +59,19 @@ return (
           <form className="w-100" onSubmit={onSubmitHandler}>
             <div class="mb-3  text-white">
               <label for="name" class="form-label">Name</label>
-              <input type="number" class="form-control card_bg text-white" id="name" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+              <input type="text" required class="form-control card_bg text-white" id="name" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
             </div>
             <div class="mb-3 text-white">
               <label for="email" class="form-label">Email</label>
-              <input type="Email" class="form-control card_bg text-white" id="email" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+              <input type="Email" required class="form-control card_bg text-white" id="email" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
             </div>
             <div class="mb-3  text-white">
               <label for="message" class="form-label">Message</label>
-              <textarea type="text" class="form-control card_bg text-white" id="message" style={{ height: "200px" }} placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+              <textarea type="text" required class="form-control card_bg text-white" id="message" style={{ height: "200px" }} placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
             </div>
             <button className="btn btn-primary w-100">Contact Us Now</button>
           </form>
+          {status && <span className="text-secondary p-1">Thanks for connect with us </span>}
         </div>
       </div>
 

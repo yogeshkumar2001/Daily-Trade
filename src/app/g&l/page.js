@@ -1,6 +1,6 @@
 import Image from "next/image"
 import GainerTable from "../component/GainerTable"
-async function gL() {
+async function GL() {
     let res = await fetch("https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&market=IN&apikey=Y2GV1Q0LK3DDTW3Q");
     // let isMobile = window.matchMedia("(max-width: 500px)").matches;
     let gainerArr = await res.json();
@@ -31,4 +31,4 @@ async function gL() {
     )
 }
 
-export default gL
+export default GL
