@@ -10,18 +10,19 @@ async function GainerTable(props) {
   // },
   
   let tableBody = <tbody>
-    {props.data.map((v, i) => {
-      return <tr key={i}>
+    {data.map((v, i) => (
+      <tr key={v.ticker}> {/* Use a unique identifier for each row */}
         <th scope="row">{i + 1}</th>
         <td>{v.ticker}</td>
         <td>{v.price}</td>
         <td>{v.change_amount}</td>
         <td>{v.change_percentage}</td>
       </tr>
-    })}
-  </tbody>
+    ))}
+  </tbody>;
+
   return (
-    <table class="table m-0 table-striped" >
+    <table className="table m-0 table-striped"> {/* Use className instead of class */}
       <thead>
         <tr>
           <th scope="col"></th>
@@ -33,7 +34,7 @@ async function GainerTable(props) {
       </thead>
       {tableBody}
     </table>
-  )
+  );
 }
 
-export default GainerTable
+export default GainerTable;

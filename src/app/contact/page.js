@@ -1,37 +1,50 @@
 'use client'
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { useState } from "react";
-export default function Contact() {
-  const [userData,setUserData] = useState({
-    name:"",
-    email:"",
-    message:""
-  })
-  const [status,setStatus] =useState(null)
+
+export default function Contact() { // Function name starts with uppercase for React component
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [status, setStatus] = useState(null);
+
   function onChangeHandler(e) {
     let key = e.target.id;
     let value = e.target.value;
-    setUserData((userData)=>(
-      {...userData,[key]:value}
-    ))
+    setUserData((prevData) => ({
+      ...prevData,
+      [key]: value
+    }));
   }
+
   async function onSubmitHandler(e) {
     e.preventDefault();
-    let res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content_Type": "application/json" },
-      body: JSON.stringify({
-        "username": userData.name,
-        "email": userData.email,
-        "message": userData.message
-      })
-      
-  })
-  setStatus(true)
-}
-let isMobile = window.matchMedia("(max-width:500px)").matches
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: "admin",
+          email: "admin@gmail.com",
+          message: "Hello i'm message"
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      setStatus("success"); // Update status for success message
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus("error"); // Update status for error message
+    }
+  }
+
+  let isMobile = window.matchMedia("(max-width:500px)").matches;
 return (
   <div className="w-100 h-100 pb-5" style={{ backgroundColor: "#051A14" }}>
     <div className="breadcrumb_bg w-100 d-flex align-items-end">
