@@ -1,8 +1,8 @@
-import Image from "next/image"
+
 import GainerTable from "../component/GainerTable"
 async function GL() {
     let res = await fetch("https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&market=IN&apikey=Y2GV1Q0LK3DDTW3Q");
-    // let isMobile = window.matchMedia("(max-width: 500px)").matches;
+
     let gainerArr = await res.json();
     let createTableContainer = (arr, title) => {
         return <div className="card h-100 mt-5" style={{ backgroundColor: "#1B2D29" }}>
@@ -10,7 +10,7 @@ async function GL() {
                 <div className="d-flex justify-content-center w-100">
                     <h1>{title}</h1>
                 </div>
-                <GainerTable data={arr} title={title.split(' ')[1]}></GainerTable>
+                <GainerTable data={arr.length >0 ? arr : []} title={title.split(' ')[1]}></GainerTable>
             </div>
         </div>
     }

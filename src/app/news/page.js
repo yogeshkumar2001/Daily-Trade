@@ -1,5 +1,6 @@
 import NewsCard from "../component/newCard"
 async function News() {
+
   let url = "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=COIN,CRYPTO:BTC,FOREX:USD&time_from=20220410T0130&limit=50&apikey=Y2GV1Q0LK3DDTW3Q"
   let res = await fetch(url);
   let newsArr = await res.json()
@@ -39,7 +40,7 @@ async function News() {
           <div className="card mt-5 p-2 " style={{ backgroundColor: "#1B2D29" }}>
             <div className="d-flex flex-wrap justify-content-center">
               {Object.entries(categories).map(([v, k]) => {
-                return <button class="badge rounded-pill m-2 p-2" style={{ marginLeft: "5%", backgroundColor: "#051A14" }}>{v}</button>
+                return <button className="badge rounded-pill m-2 p-2" style={{ marginLeft: "5%", backgroundColor: "#051A14" }}>{v}</button>
               })}
             </div>
           </div>

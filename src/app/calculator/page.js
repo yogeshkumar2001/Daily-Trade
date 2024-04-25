@@ -60,17 +60,17 @@ function Markets() {
         <div className="container container_support" >
           <div className="card mt-5 " style={{ backgroundColor: "#051A14" }}>
             <form onSubmit={(e) => { calculate(e) }}>
-              <div class="mb-3  text-white">
-                <label for="amount" class="form-label">Monthly Investment Amount:</label>
-                <input type="number" class="form-control card_bg text-white" id="amount" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+              <div className="mb-3  text-white">
+                <label for="amount" className="form-label">Monthly Investment Amount:</label>
+                <input type="number" className="form-control card_bg text-white" id="amount" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
               </div>
-              <div class="mb-3 text-white">
-                <label for="amount" class="form-label">Investment Duration (in years):</label>
-                <input type="number" class="form-control card_bg text-white" id="duration" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+              <div className="mb-3 text-white">
+                <label for="amount" className="form-label">Investment Duration (in years):</label>
+                <input type="number" className="form-control card_bg text-white" id="duration" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
               </div>
-              <div class="mb-3  text-white">
-                <label for="amount" class="form-label">Expected Annual Return (%):</label>
-                <input type="number" class="form-control card_bg text-white" id="return" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+              <div className="mb-3  text-white">
+                <label for="amount" className="form-label">Expected Annual Return (%):</label>
+                <input type="number" className="form-control card_bg text-white" id="return" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
               </div>
               <button className="btn btn-primary">Calculate</button>
             </form>

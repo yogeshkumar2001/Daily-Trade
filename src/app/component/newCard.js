@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 function newCard({ data }) {
@@ -14,16 +15,16 @@ function newCard({ data }) {
     }
     let tempData = data.feed.slice(0,11);
     let prepareData = tempData.map((v,i) => {
-        return <div class="card mb-3 card_bg" key={i}>
-            <div class="row g-0 ">
-                <div class="col-md-4 d-flex justify-content-center align-items-center card_bg p-2">
-                    <img src={v.banner_image} class="img-fluid rounded-start" alt="..." />
+        return <div className="card mb-3 card_bg" key={i}>
+            <div className="row g-0 ">
+                <div className="col-md-4 d-flex justify-content-center align-items-center card_bg p-2">
+                    <Image src={v.banner_image} className="img-fluid rounded-start" alt="..." />
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body card_bg text-white">
-                        <h5 class="card-title ">{v.title}</h5>
-                        <p class="card-text">{v.summary}</p>
-                        <p class="card-text"><small class="" style={{ color: "gray" }}>Published on {handledDate(v.time_published)}</small></p>
+                <div className="col-md-8">
+                    <div className="card-body card_bg text-white">
+                        <h5 className="card-title ">{v.title}</h5>
+                        <p className="card-text">{v.summary}</p>
+                        <p className="card-text"><small className="" style={{ color: "gray" }}>Published on {handledDate(v.time_published)}</small></p>
                         <Link href={v.url} target="_blank">
                             <button className="btn btn-primary">Read more</button>
                         </Link>

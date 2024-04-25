@@ -1,7 +1,7 @@
 'use client'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { useState } from "react";
+import {  useState } from "react";
 
 export default function Contact() { // Function name starts with uppercase for React component
   const [userData, setUserData] = useState({
@@ -27,9 +27,9 @@ export default function Contact() { // Function name starts with uppercase for R
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username: "admin",
-          email: "admin@gmail.com",
-          message: "Hello i'm message"
+          username: userData.name,
+          email: userData.email,
+          message: userData.message
         })
       });
 
@@ -40,11 +40,10 @@ export default function Contact() { // Function name starts with uppercase for R
       setStatus("success"); // Update status for success message
     } catch (error) {
       console.error("Error submitting form:", error);
-      setStatus("error"); // Update status for error message
+      setStatus(error); // Update status for error message
     }
   }
 
-  let isMobile = window.matchMedia("(max-width:500px)").matches;
 return (
   <div className="w-100 h-100 pb-5" style={{ backgroundColor: "#051A14" }}>
     <div className="breadcrumb_bg w-100 d-flex align-items-end">
@@ -53,11 +52,11 @@ return (
         <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis.</p>
       </div>
     </div>
-    <div className={isMobile ? "" : "d-flex"}>
-      <div className={`container ${isMobile ? "w-100" : "w-25 mt-5"}`} >
-        <div className="card p-3" style={{ backgroundColor: "#051A14" }}>
+    <div className={"d-flex contact-container"}>
+      <div className={`container w-25 mt-5 contact-container`} >
+        <div className="card p-3 ps-0" style={{ backgroundColor: "#051A14" }}>
           <div className="text-white" >
-            <h3>Let’s <span className="mid-text">Get In Touch</span> With Us</h3>
+            <h3>Let&apos;s <span className="mid-text">Get In Touch</span> With Us</h3>
             <div className="d-flex ">
               <FontAwesomeIcon icon={faInstagram} size="2xl" style={{ margin: "0% 2% 0% 0%", cursor: "pointer" }} />
               <FontAwesomeIcon icon={faXTwitter} size="2xl" style={{ margin: "0% 2% 0% 0%", cursor: "pointer" }} />
@@ -67,20 +66,20 @@ return (
           </div>
         </div>
       </div>
-      <div className={`container ${isMobile ? "w-100" : "w-50 "}`}>
+      <div className={`container contact-container w-50 `}>
         <div className="card mt-5 d-flex" style={{ backgroundColor: "#051A14" }}>
           <form className="w-100" onSubmit={onSubmitHandler}>
-            <div class="mb-3  text-white">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" required class="form-control card_bg text-white" id="name" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+            <div className="mb-3  text-white">
+              <label for="name" className="form-label">Name</label>
+              <input type="text" required className="form-control card_bg text-white" id="name" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
             </div>
-            <div class="mb-3 text-white">
-              <label for="email" class="form-label">Email</label>
-              <input type="Email" required class="form-control card_bg text-white" id="email" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+            <div className="mb-3 text-white">
+              <label for="email" className="form-label">Email</label>
+              <input type="Email" required className="form-control card_bg text-white" id="email" placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
             </div>
-            <div class="mb-3  text-white">
-              <label for="message" class="form-label">Message</label>
-              <textarea type="text" required class="form-control card_bg text-white" id="message" style={{ height: "200px" }} placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
+            <div className="mb-3  text-white">
+              <label for="message" className="form-label">Message</label>
+              <textarea type="text" required className="form-control card_bg text-white" id="message" style={{ height: "200px" }} placeholder="Monthly Investment Amount:" onChange={(e) => { onChangeHandler(e) }} />
             </div>
             <button className="btn btn-primary w-100">Contact Us Now</button>
           </form>

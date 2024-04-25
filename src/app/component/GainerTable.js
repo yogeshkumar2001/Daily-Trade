@@ -10,7 +10,7 @@ async function GainerTable(props) {
   // },
   
   let tableBody = <tbody>
-    {data.map((v, i) => (
+    {props.data.map((v, i) => (
       <tr key={v.ticker}> {/* Use a unique identifier for each row */}
         <th scope="row">{i + 1}</th>
         <td>{v.ticker}</td>
